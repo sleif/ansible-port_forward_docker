@@ -13,9 +13,8 @@ Role Variables
 
 - DOCKER_NETWORK_NAME (can be defined in sleif.docker)
 - VIRTUAL_HOST (entry point hostname)
-- REMOTE_HOST   
+- REMOTE_HOST
 - REMOTE_PORT
-
 
 Dependencies
 ------------
