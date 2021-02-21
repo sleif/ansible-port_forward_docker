@@ -1,0 +1,20 @@
+---
+# roles/port_forward_container/tasks/main.yml
+
+- name: 'Start port_forward_container for {{ VIRTUAL_HOST }}'
+  docker_container:
+    name: 'port_forward_for_{{ VIRTUAL_HOST | replace(",", "-") }}'
+    image: 'marcnuri/port-forward'
+    state: started
+    restart_policy: always
+    recreate: true
+    networks:
+      - name: "{{ DOCKER_NETWORK_NAME }}"
+    networks_cli_compatible: true
+    pull: true
+    env:
+      REMOTE_HOST: '{{ REMOTE_HOST }}'
+      REMOTE_PORT: '{{ REMOTE_PORT }}'
+      VIRTUAL_HOST: '{{ VIRTUAL_HOST }}'
+      LETSENCRYPT_HOST: '{{ VIRTUAL_HOST }}'
+      LETSENCRYPT_EMAIL: '{{ LETSENCRYPT_EMAIL }}'

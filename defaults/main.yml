@@ -1,0 +1,3 @@
+---
+
+DOCKER_NETWORK_NAME: "custom-bridge"
