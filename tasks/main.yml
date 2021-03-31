@@ -2,7 +2,7 @@
 # roles/port_forward_container/tasks/main.yml
 
 - name: 'Start port_forward_container for {{ VIRTUAL_HOST }}'
-  docker_container:
+  community.general.docker_container:
     name: 'port_forward_for_{{ VIRTUAL_HOST | replace(",", "-") }}'
     image: 'marcnuri/port-forward'
     state: started
