@@ -2,6 +2,7 @@ sleif.port_forward_docker
 ============
 
 This role runs a socat based port forwarding in docker.
+Docker image: <https://github.com/manusa/docker-images/tree/master/port-forward>
 
 Requirements
 ------------
@@ -11,7 +12,7 @@ Use it on a machine setup with ansible role sleif.docker.
 Role Variables
 --------------
 
-- DOCKER_NETWORK_NAME (can be defined in sleif.docker)
+- docker_network_name (can be defined in sleif.docker)
 - VIRTUAL_HOST (entry point hostname)
 - REMOTE_HOST
 - REMOTE_PORT
@@ -27,7 +28,7 @@ Example Playbook
     - hosts: "server"
       user: root
       vars:
-        DOCKER_NETWORK_NAME: 'custom_docker_network'
+        docker_network_name: 'custom_docker_network'
       roles:
         - { role: sleif.nginx_docker, tags: "nginx_docker",
                                           VIRTUAL_HOST: "external-host.example.com",

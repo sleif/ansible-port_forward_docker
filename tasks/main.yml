@@ -9,7 +9,7 @@
     restart_policy: always
     recreate: true
     networks:
-      - name: "{{ DOCKER_NETWORK_NAME }}"
+      - name: "{{ docker_network_name }}"
     networks_cli_compatible: true
     pull: true
     env:
@@ -17,4 +17,4 @@
       REMOTE_PORT: '{{ REMOTE_PORT }}'
       VIRTUAL_HOST: '{{ VIRTUAL_HOST }}'
       LETSENCRYPT_HOST: '{{ VIRTUAL_HOST }}'
-      LETSENCRYPT_EMAIL: '{{ LETSENCRYPT_EMAIL }}'
+      LETSENCRYPT_EMAIL: '{{ letsencrypt_email }}'
