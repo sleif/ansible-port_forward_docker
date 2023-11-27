@@ -1,9 +1,9 @@
 ---
 # roles/port_forward_container/tasks/main.yml
 
-- name: 'Start port_forward_container for {{ VIRTUAL_HOST }}'
+- name: 'Start port_forward_container for {{ virtual_host }}'
   community.general.docker_container:
-    name: 'port_forward_for_{{ VIRTUAL_HOST | replace(",", "-") }}'
+    name: 'port_forward_for_{{ virtual_host | replace(",", "-") }}'
     image: 'marcnuri/port-forward'
     state: started
     restart_policy: always
@@ -15,6 +15,6 @@
     env:
       REMOTE_HOST: '{{ REMOTE_HOST }}'
       REMOTE_PORT: '{{ REMOTE_PORT }}'
-      VIRTUAL_HOST: '{{ VIRTUAL_HOST }}'
-      LETSENCRYPT_HOST: '{{ VIRTUAL_HOST }}'
+      VIRTUAL_HOST: '{{ virtual_host }}'
+      LETSENCRYPT_HOST: '{{ virtual_host }}'
       LETSENCRYPT_EMAIL: '{{ letsencrypt_email }}'
