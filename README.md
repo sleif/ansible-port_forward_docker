@@ -14,8 +14,8 @@ Role Variables
 
 - docker_network_name (can be defined in sleif.docker)
 - virtual_host (entry point hostname)
-- REMOTE_HOST
-- REMOTE_PORT
+- remote_host
+- remote_port
 
 Dependencies
 ------------
@@ -32,8 +32,8 @@ Example Playbook
       roles:
         - { role: sleif.nginx_docker, tags: "nginx_docker",
                                           virtual_host: "external-host.example.com",
-                                          REMOTE_HOST: "target-host.internal.excample.com",
-                                          REMOTE_PORT: "8080" }
+                                          remote_host: "target-host.internal.example.com",
+                                          remote_port: "8080" }
 
 License
 -------

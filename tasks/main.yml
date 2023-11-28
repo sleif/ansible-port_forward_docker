@@ -13,8 +13,8 @@
     networks_cli_compatible: true
     pull: true
     env:
-      REMOTE_HOST: '{{ REMOTE_HOST }}'
-      REMOTE_PORT: '{{ REMOTE_PORT }}'
+      REMOTE_HOST: '{{ remote_host }}'
+      REMOTE_PORT: '{{ remote_port }}'
       VIRTUAL_HOST: '{{ virtual_host }}'
       LETSENCRYPT_HOST: '{{ virtual_host }}'
       LETSENCRYPT_EMAIL: '{{ letsencrypt_email }}'
